@@ -12,5 +12,7 @@ def choose_word(fname):
     
     return random.sample(good_words, 1)[0]
 
-    
+def masking_words():
+    masked_word = "--------"
+    return masked_word
     
