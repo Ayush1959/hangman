@@ -35,6 +35,19 @@ def test_masking():
         f.write(i+"\n")
     f.close()
     
-    selected_word = "elephant"
+    selected_word = hangman.choose_word("/tmp/fake_dict.txt")
+    masked_word = hangman.masking_words()
+    os.unlink("/tmp/fake_dict.txt")
     assert masked_word == "--------"
     
+def test_masking2():
+    # First create a dummy file
+    f = open("/tmp/fake_dict.txt", "w")
+    for i in ["cat", "dog", "bull", "chimpanzee", "mouse"]:
+        f.write(i+"\n")
+    f.close()
+    
+    selected_word = hangman.choose_word("/tmp/fake_dict.txt")
+    masked_word = hangman.masking_words()
+    os.unlink("/tmp/fake_dict.txt")
+    assert masked_word == "----------"
