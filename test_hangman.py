@@ -36,7 +36,7 @@ def test_masking():
     f.close()
     
     selected_word = hangman.choose_word("/tmp/fake_dict.txt")
-    masked_word = hangman.masking_words()
+    masked_word = hangman.masking_words("/tmp/fake_dict.txt")
     os.unlink("/tmp/fake_dict.txt")
     assert masked_word == "--------"
     
@@ -48,6 +48,6 @@ def test_masking2():
     f.close()
     
     selected_word = hangman.choose_word("/tmp/fake_dict.txt")
-    masked_word = hangman.masking_words()
+    masked_word = hangman.masking_words("/tmp/fake_dict.txt")
     os.unlink("/tmp/fake_dict.txt")
     assert masked_word == "----------"
