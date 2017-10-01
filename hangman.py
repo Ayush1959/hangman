@@ -12,7 +12,13 @@ def choose_word(fname):
     
     return random.sample(good_words, 1)[0]
 
-def masking_words():
-    masked_word = "--------"
+def masking_words(fname):
+    selected_word =  choose_word(fname)
+    print(selected_word)
+    s= len(selected_word)
+    masked_word = '-' * s
     return masked_word
+#    return '-' * s
+#    print('-' * s )
+
     
