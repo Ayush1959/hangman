@@ -18,7 +18,7 @@ def masking_words(fname):
     s= len(selected_word)
     masked_word = '-' * s
     return masked_word
-#    return '-' * s
-#    print('-' * s )
 
+def no_of_remaining_turns():
+    return 8
     
