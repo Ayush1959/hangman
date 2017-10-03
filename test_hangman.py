@@ -51,3 +51,15 @@ def test_masking2():
     masked_word = hangman.masking_words("/tmp/fake_dict.txt")
     os.unlink("/tmp/fake_dict.txt")
     assert masked_word == "----------"
+
+def test_no_remaining_turns_no_error():
+    # First create a dummy file
+    f = open("/tmp/fake_dict.txt", "w")
+    for i in ["cat", "dog", "bull", "elephant", "mouse",  "chimpanzee"]:
+        f.write(i+"\n")
+    f.close()
+
+    no_of_turn =hangman.no_of_remaining_turns()
+
+    assert no_of_turns==8
+    os.unlink("/tmp/fake_dict.txt")
